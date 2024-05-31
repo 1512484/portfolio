@@ -1,0 +1,112 @@
+@import "./_common.scss";
+@import "./home/_homeView.scss";
+@import "./home/_profile.scss";
+@import "./home/_project.scss";
+@import "./home/_projectTab.scss";
+@import "./project-detail/_header.scss";
+@import "./project-detail/_footer.scss";
+@import "./project-detail/projectDetail.scss";
+
+*, html {
+    word-break: break-word;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    font-family: "Campton-Light", sans-serif;
+}
+
+html {
+    min-height: 100%;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+body {
+    // margin: 0;
+    // padding: 0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 auto;
+    color: #FFFFFF;
+    background: linear-gradient(180deg, #020014 0%, #11002F 100%);
+    overflow-x: hidden;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1400px;
+    padding: 0 20px;
+    @media (max-width: 768px) {
+        max-width: 100%;
+    }
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.show-on-desktop {
+    display: block;
+    &.project-component {
+        display: flex;
+    }
+}
+.hide-on-desktop {
+    display: none;
+    min-height: 100vh;
+    .go-back-home-btn {
+        min-width: 186px;
+        height: 51px;
+        border-radius: 50px;
+        border: 1px solid #FFFFFF;
+        outline: none;
+        background: transparent;
+        font-size: 24px;
+        line-height: 2.2;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        padding: 0 16px;
+        margin: 20px;
+        &:hover {
+            background: #804DF4;
+            color: #FFFFFF;
+            border-color: #804DF4;
+            filter: drop-shadow(0px 0px 6px #804DF4);
+        }
+        &.active {
+            filter: none;
+        }
+        &:focus {
+            background: #804DF4;
+            color: #FFFFFF;
+        }
+    }
+}
+@media (max-width: 900px) {
+    .show-on-desktop {
+        display: none;
+        &.project-component {
+            display: none;
+        }
+    }
+    .hide-on-desktop {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

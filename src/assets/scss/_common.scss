@@ -1,0 +1,498 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+// Font: Clash Display ===============================================================
+
+@font-face {
+    font-family: "ClashDisplay-Extralight";
+    src: url("../fonts/clash-display/ClashDisplay-Extralight.ttf") format("truetype");
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ClashDisplay-Light";
+    src: url("../fonts/clash-display/ClashDisplay-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ClashDisplay-Regular";
+    src: url("../fonts/clash-display/ClashDisplay-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ClashDisplay-Medium";
+    src: url("../fonts/clash-display/ClashDisplay-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ClashDisplay-Semibold";
+    src: url("../fonts/clash-display/ClashDisplay-Semibold.ttf") format("truetype");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "ClashDisplay-Bold";
+    src: url("../fonts/clash-display/ClashDisplay-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+// Font: Campton ===============================================================
+
+@font-face {
+    font-family: "Campton-Extralight";
+    src: url("../fonts/campton/CamptonExtraLight.otf") format("truetype");
+    font-weight: 200;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Campton-Light";
+    src: url("../fonts/campton/CamptonLight.otf") format("truetype");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Campton-Book";
+    src: url("../fonts/campton/CamptonBook.otf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Campton-Medium";
+    src: url("../fonts/campton/CamptonMedium.otf") format("truetype");
+    font-weight: 500;
+    font-display: swap;
+    font-style: normal;
+}
+
+// @font-face {
+//     font-family: "Campton-Semibold";
+//     src: url("../fonts/campton/CamptonSemiBold.otf") format("truetype");
+//     font-weight: 600;
+//     font-display: swap;
+//     font-style: normal;
+// }
+
+@font-face {
+    font-family: "Campton-Bold";
+    src: url("../fonts/campton/CamptonBold.otf") format("truetype");
+    font-weight: 700;
+    font-display: swap;
+    font-style: normal;
+}
+
+.clash-display-extralight {
+    font-family: "ClashDisplay-Extralight", sans-serif;
+    font-weight: 200;
+}
+
+.clash-display-light {
+    font-family: "ClashDisplay-Light", sans-serif;
+    font-weight: 300;
+}
+
+.clash-display-book {
+    font-family: "ClashDisplay-Book", sans-serif;
+    font-weight: 400;
+}
+
+.clash-display-medium {
+    font-family: "ClashDisplay-Medium", sans-serif;
+    font-weight: 500;
+}
+
+.clash-display-semibold {
+    font-family: "ClashDisplay-Semibold", sans-serif;
+    font-weight: 600;
+}
+
+.clash-display-bold {
+    font-family: "ClashDisplay-Bold", sans-serif;
+    font-weight: 700;
+}
+
+
+
+.campton-extralight {
+    font-family: "Campton-Extralight", sans-serif;
+    font-weight: 200;
+}
+
+.campton-light {
+    font-family: "Campton-Light", sans-serif;
+    font-weight: 300;
+}
+
+.campton-book {
+    font-family: "Campton-Book", sans-serif;
+    font-weight: 400;
+}
+
+.campton-medium {
+    font-family: "Campton-Medium", sans-serif;
+    font-weight: 500;
+}
+
+// .campton-semibold {
+//     font-family: "Campton-Semibold", sans-serif;
+//     font-weight: 600;
+// }
+
+.campton-bold {
+    font-family: "Campton-Bold", sans-serif;
+    font-weight: 700;
+}
+
+.inter-extralight {
+    font-family: "Inter", sans-serif;
+    font-weight: 200;
+}
+
+.inter-light {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+}
+
+.inter-regular {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+
+.inter-medium {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+.inter-semibold {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+}
+
+.inter-bold {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+}
+
+@each $display in $displays {
+    .#{$display} {
+        display: $display;
+    }
+}
+
+@each $position in $positions {
+    .#{$position} {
+        position: $position;
+    }
+}
+
+.visibility-hidden {
+    visibility: hidden;
+}
+
+.relative-square {
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.absolute-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.translate-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@each $name, $value in $aligns {
+    .items-#{$name} {
+        align-items: $value;
+    }
+}
+
+@each $name, $value in $justifies {
+    .justify-#{$name} {
+        justify-content: $value;
+    }
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+@each $overflow in $overflows {
+    .overflow-#{$overflow} {
+        overflow: $overflow;
+    }
+}
+
+.w {
+    &-full {
+        width: 100% !important;
+    }
+
+    &-max-content {
+        width: max-content;
+    }
+}
+
+@for $i from 1 through 12 {
+    @for $j from 1 through 12 {
+        .w-#{$i}\/#{$j} {
+            width: calc(100% * #{$i} / #{$j}) !important;
+        }
+    }
+}
+
+.h-full {
+    height: 100% !important;
+}
+
+.rounded {
+    border-radius: $base-rounded;
+    @each $x_name, $x_value in $x-sides {
+        @each $y_name, $y_value in $y-sides {
+            &-#{$x_name},
+            &-#{$y_name},
+            &-#{$y_name}#{$x_name} {
+                border-#{$y_value}-#{$x_value}-radius: $base-rounded;
+            }
+        }
+    }
+
+    @each $r_name, $r_value in $rounded {
+        &-#{$r_name} {
+            border-radius: #{$r_value};
+        }
+        @each $x_name, $x_value in $x-sides {
+            @each $y_name, $y_value in $y-sides {
+                &-#{$x_name}-#{$r_name},
+                &-#{$y_name}-#{$r_name},
+                &-#{$y_name}#{$x_name}-#{$r_name} {
+                    border-#{$y_value}-#{$x_value}-radius: #{$r_value};
+                }
+            }
+        }
+    }
+}
+
+@each $name, $value in $spacing-name {
+    @for $i from 0 through 10 {
+        @each $x_name, $x_value in $x-sides {
+            .#{$name}-#{$i},
+            .#{$name}x-#{$i},
+            .#{$name}#{$x_name}-#{$i} {
+                #{$value}-#{$x_value}: $i * 0.25rem;
+            }
+        }
+
+        @each $y_name, $y_value in $y-sides {
+            .#{$name}-#{$i},
+            .#{$name}y-#{$i},
+            .#{$name}#{$y_name}-#{$i} {
+                #{$value}-#{$y_value}: $i * 0.25rem;
+            }
+        }
+        @each $x_name, $x_value in $x-sides {
+            .#{$name}-#{$i}\.5,
+            .#{$name}x-#{$i}\.5,
+            .#{$name}#{$x_name}-#{$i}\.5 {
+                #{$value}-#{$x_value}: $i * 0.25rem + 0.125rem;
+            }
+        }
+
+        @each $y_name, $y_value in $y-sides {
+            .#{$name}-#{$i}\.5,
+            .#{$name}y-#{$i}\.5,
+            .#{$name}#{$y_name}-#{$i}\.5 {
+                #{$value}-#{$y_value}: $i * 0.25rem + 0.125rem;
+            }
+        }
+    }
+}
+
+@each $y_name, $y_value in $y-sides {
+    .m#{$y_name}-auto {
+        margin-#{$y_value}: auto;
+    }
+}
+
+@each $x_name, $x_value in $x-sides {
+    .m#{$x_name}-auto {
+        margin-#{$x_value}: auto;
+    }
+}
+
+.border {
+    border: 1px solid;
+}
+
+@each $name, $value in $sides {
+    .border-#{$name} {
+        border-#{$value}: 1px solid var(--color-border);
+    }
+    .border-#{$name}-0 {
+        border-#{$value}: none;
+    }
+}
+
+@for $i from 0 through 10 {
+    .gap-#{$i},
+    .gap-x-#{$i} {
+        column-gap: $i * 0.25rem;
+    }
+    .gap-#{$i},
+    .gap-y-#{$i} {
+        row-gap: $i * 0.25rem;
+    }
+
+    .gap-#{$i}\.5,
+    .gap-x-#{$i}\.5 {
+        column-gap: $i * 0.25rem + 0.125rem;
+    }
+
+    .gap-#{$i}\.5,
+    .gap-y-#{$i}\.5 {
+        row-gap: $i * 0.25rem + 0.125rem;
+    }
+}
+
+@each $align in $text-aligns {
+    .text-#{$align} {
+        text-align: $align;
+    }
+}
+
+@each $name, $value in $font-sizes {
+    .text-#{$name} {
+        font-size: $value;
+    }
+}
+
+@each $name, $value in $weights {
+    .font-#{$name} {
+        font-weight: $value;
+    }
+}
+
+@each $text-transform in $text-transforms {
+    .#{$text-transform} {
+        text-transform: $text-transform;
+    }
+}
+
+@each $text-decoration in $text-decorations {
+    .#{$text-decoration} {
+        text-decoration: $text-decoration;
+    }
+}
+
+.text-underline {
+    height: max-content;
+    // border-bottom: 1px solid currentColor;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 1px;
+        left: 0;
+        width: 100%;
+        height: 0.5px;
+        background: currentColor;
+    }
+}
+
+.italic {
+    font-style: italic;
+}
+
+.text {
+    &-truncate,
+    &-truncate-2,
+    &-truncate-3 {
+        max-width: 100%;
+        word-break: break-word;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &-truncate {
+        -webkit-line-clamp: 1;
+        white-space: nowrap;
+    }
+
+    &-truncate-2 {
+        -webkit-line-clamp: 2;
+    }
+
+    &-truncate-3 {
+        -webkit-line-clamp: 3;
+    }
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+@media (min-width: 640px) {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+        border-radius: 100px;
+        background: #f8f8f8;
+        overflow: hidden;
+        &-thumb {
+            border-radius: 100px;
+            background: #cfcfcf;
+        }
+    }
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-default {
+    cursor: default;
+}

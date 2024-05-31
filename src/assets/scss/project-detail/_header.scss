@@ -1,0 +1,61 @@
+.header-component {
+    position: sticky;
+    top: 0;
+    padding: 30px 50px;
+    background: #100E26;
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+
+    .title {
+        color: #804DF4;
+    }
+
+    .user-image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: lighten;
+        img {
+            width: 172.27px;
+        }
+    }
+
+    .contact-btn {
+        width: 186px;
+        height: 51px;
+        border-radius: 50px;
+        border: 1px solid #804DF4;
+        outline: none;
+        background: transparent;
+        font-size: 24px;
+        color: #804DF4;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            background: #804DF4;
+            color: #FFFFFF;
+            filter: drop-shadow(0px 0px 6px #804DF4);
+        }
+        &.active {
+            // animation: button-animate 0.3s linear;
+            filter: none;
+        }
+        &:focus {
+            background: #804DF4;
+            color: #FFFFFF;
+        }
+    }
+}
+
+@keyframes button-animate {
+    0%, 100% {
+        background: #804DF4;
+        color: #FFFFFF;
+    }
+    50% {
+        background: #a382f0;
+        color: #FFFFFF;
+    }
+}
