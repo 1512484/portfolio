@@ -35,6 +35,7 @@
                 :src="image" 
                 :data-aos="animateList[index % 3]" 
                 data-aos-offset="200"
+                :alt="`Image ${index}`"
             />
         </div>
 
@@ -46,6 +47,7 @@
                 :class="{'inline-item': child.inline_layout}"
                 :data-aos="animateList[index % 3]"
                 data-aos-offset="200"
+                :alt="`Image ${index}`"
             >
                 <div class="item-header" v-if="child.icon || child.title">
                     <img :src="child.icon" v-if="child.icon" class="item-icon" />
@@ -79,6 +81,7 @@
                     :src="image"
                     :data-aos="animateList[index % 3]"
                     data-aos-offset="200"
+                    :alt="`Image ${index}`"
                 />
             </div>
         </div>
@@ -87,7 +90,9 @@
 
 <script setup>
 import { ref, computed, watch, onMounted, nextTick } from "vue";
+import { useRoute } from "vue-router";
 import { useProjectStore } from "@/stores/project";
+import AOS from "aos";
 
 const props = defineProps({
     detail: {
@@ -96,6 +101,7 @@ const props = defineProps({
     }
 });
 
+const route = useRoute();
 const projectStore = useProjectStore();
 
 const animateList = ref(["fade-up", "fade-left", "fade-right"]);
@@ -109,6 +115,16 @@ const prevProjectLogoPos = computed(() => projectStore.currentProjectLogoPos);
 onMounted(async () => {
     setTitleAnimation();
 });
+
+watch(route, () => {
+    setTimeout(() => {
+        try {
+            AOS.refresh();
+        } catch(error) {
+            console.log("Error: ", error);
+        }
+    }, 100);
+}, { immediate: true, deep: true });
 
 const setTitleAnimation = async () => {
     let titleContainer = document.getElementById("project-detail-title");
