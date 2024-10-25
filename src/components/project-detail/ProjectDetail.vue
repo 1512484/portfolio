@@ -92,7 +92,7 @@
 import { ref, computed, watch, onMounted, nextTick } from "vue";
 import { useRoute } from "vue-router";
 import { useProjectStore } from "@/stores/project";
-import AOS from "aos";
+// import AOS from "aos";
 
 const props = defineProps({
     detail: {
@@ -116,15 +116,15 @@ onMounted(async () => {
     setTitleAnimation();
 });
 
-watch(route, () => {
-    setTimeout(() => {
-        try {
-            AOS.refresh();
-        } catch(error) {
-            console.log("Error: ", error);
-        }
-    }, 100);
-}, { immediate: true, deep: true });
+// watch(route, () => {
+//     setTimeout(() => {
+//         try {
+//             AOS.refresh();
+//         } catch(error) {
+//             console.log("Error: ", error);
+//         }
+//     }, 100);
+// }, { immediate: true, deep: true });
 
 const setTitleAnimation = async () => {
     let titleContainer = document.getElementById("project-detail-title");

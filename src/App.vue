@@ -1,14 +1,29 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 import AOS from "aos";
 import "aos/dist/aos.css";
 // import InfoModal from "@/components/project-detail/InfoModal.vue";
 
 // const infoModalRef = ref(null);
 
+const bodyHeight = ref(0);
+const observer = ref(null);
+
 onMounted(() => {
   try {
     AOS.init();
+
+    observer.value = new ResizeObserver((entries) => {
+      entries?.forEach((entry) => {
+        let height = Number(entry.contentRect?.height || 0);
+        if(height !== bodyHeight.value) {
+          bodyHeight.value = height;
+          AOS.refresh();
+        }
+      });
+    });
+
+    observer.value?.observe?.(document.body);
   } catch(error) {
     console.log("Error: ", error);
   }
@@ -17,6 +32,10 @@ onMounted(() => {
   // setTimeout(() => {
   //   infoModalRef.value?.close();
   // }, 3000);
+});
+
+onBeforeUnmount(() => {
+  observer.value?.disconnect?.();
 });
 </script>
 
